@@ -1,7 +1,5 @@
 import type { NextPage } from "next";
 import Link from "next/link";
-import Head from "next/head";
-import Image from "next/image";
 import Mail from "../components/mail";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/css";
