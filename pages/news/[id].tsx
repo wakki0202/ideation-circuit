@@ -34,13 +34,19 @@ export default function NewsDetail({ news }: Props) {
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const id = ctx.params?.id;
-  const idExceptArray = id instanceof Array ? id[0] : id;
-  const data = await client.get({
-    endpoint: "news",
-    contentId: idExceptArray,
-  });
+export const getStaticPaths = async () => {
+  const data = await client.get({ endpoint: "news" });
+
+  const paths = data.contents.map(
+    (content: { id: any }) => `/news/${content.id}`
+  );
+  return { paths, fallback: false };
+};
+
+// データをテンプレートに受け渡す部分の処理を記述します
+export const getStaticProps = async (context: { params: { id: any } }) => {
+  const id = context.params.id;
+  const data = await client.get({ endpoint: "news", contentId: id });
 
   return {
     props: {
