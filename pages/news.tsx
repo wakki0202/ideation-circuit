@@ -8,7 +8,7 @@ type Props = {
   news: Array<News>;
 };
 
-const News = ({ news }: Props) => {
+export default function News({ news }: Props) {
   return (
     <div className=" w-11/12 m-auto">
       <ul className="w-11/12 m-auto flex gap-10">
@@ -29,7 +29,7 @@ const News = ({ news }: Props) => {
       </ul>
     </div>
   );
-};
+}
 
 export const getServerSideProps = async () => {
   const data = await client.get({ endpoint: "news" });
@@ -40,5 +40,3 @@ export const getServerSideProps = async () => {
     },
   };
 };
-
-export default News;
