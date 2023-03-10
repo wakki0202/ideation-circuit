@@ -38,3 +38,7 @@ h2 {
   background-color: #7992b0;
   color: white;
 }
+
+.splide .splide__pagination {
+  display: none;
+}

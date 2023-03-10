@@ -2,8 +2,17 @@ import type { NextPage } from "next";
 import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
+import Mail from "../components/mail";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import "@splidejs/splide/css";
+import { client } from "../libs/client"; // srcから見た絶対パスで指定
+import type { News } from "../types/news"; // srcから見た絶対パスで指定
 
-const Home: NextPage = () => {
+type Props = {
+  news: Array<News>;
+};
+
+const Home = ({ news }: Props) => {
   return (
     <div>
       <header className="top-5 z-50 fixed w-full">
@@ -27,7 +36,7 @@ const Home: NextPage = () => {
           <h2 className="font-bold text-2xl">
             アイディエーション・サーキットとは
           </h2>
-          <p className="pt-10 font-bold text-xl">
+          <p className="pt-10 font-bold text-xl leading-10">
             部署、世代、役割を越境して口ばかりのDiversityを終わらせ、
             <br />
             “SameよりもDifferent、NeedよりWant”を尊重し全員がお互いの背景
@@ -105,9 +114,8 @@ const Home: NextPage = () => {
             height="400"
             src="https://www.youtube.com/embed/_JWtEUDhveo"
             title="YouTube video player"
-            frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
+            allowFullScreen
             className="mt-10 m-auto"
           ></iframe>
         </div>
@@ -209,12 +217,57 @@ const Home: NextPage = () => {
 
               <p className="text-2xl font-bold mt-10 text-center">役職カード</p>
 
-              <div className="flex gap-5 justify-center mt-5">
-                <img src="/boss.png" alt="" width={170} />
-                <img src="/manager.png" alt="" width={170} />
-                <img src="/creator.png" alt="" width={170} />
-                <img src="/producer.png" alt="" width={170} />
-                <img src="/marketer.png" alt="" width={170} />
+              <div className="mt-5">
+                <Splide
+                  aria-label=""
+                  options={{
+                    rewind: true,
+                    perPage: 2,
+                    perMove: 1,
+                    type: "loop",
+                  }}
+                >
+                  <SplideSlide>
+                    <img
+                      src="/boss.png"
+                      alt=""
+                      width={350}
+                      className="m-auto"
+                    />
+                  </SplideSlide>
+                  <SplideSlide>
+                    <img
+                      src="/manager.png"
+                      alt=""
+                      width={350}
+                      className="m-auto"
+                    />
+                  </SplideSlide>
+                  <SplideSlide>
+                    <img
+                      src="/creator.png"
+                      alt=""
+                      width={350}
+                      className="m-auto"
+                    />
+                  </SplideSlide>
+                  <SplideSlide>
+                    <img
+                      src="/producer.png"
+                      alt=""
+                      width={350}
+                      className="m-auto"
+                    />
+                  </SplideSlide>
+                  <SplideSlide>
+                    <img
+                      src="/marketer.png"
+                      alt=""
+                      width={350}
+                      className="m-auto"
+                    />
+                  </SplideSlide>
+                </Splide>
               </div>
             </div>
           </div>
@@ -274,59 +327,58 @@ const Home: NextPage = () => {
 
         <div id="ideation NEWS" className="pt-20">
           <h2 className="font-bold text-2xl">ideation NEWS</h2>
-        </div>
 
-        <div id="研修" className="pt-20">
-          <h2 className="font-bold text-2xl">研修までの流れ</h2>
-        </div>
+          <ul className="w-11/12 m-auto flex gap-10">
+            {news
+              .map((news) => (
+                <li key={news.id} className="my-5 w-9/12 m-auto">
+                  <Link
+                    href={`/news/${news.id}`}
+                    className="font-bold text-left"
+                  >
+                    <img
+                      className="rounded-t-lg"
+                      src={news.eyeCatch.url}
+                      alt="Sunset in the mountains"
+                    />
+                    <p className="text-left border-b border-x px-3 pt-2 pb-6 border-black rounded-b-lg bg-gray-700 text-white">
+                      {news.title}
+                    </p>
+                  </Link>
+                </li>
+              ))
+              .slice(0, 3)}
+          </ul>
 
-        <div id="お問い合わせ" className="py-20 mb-20">
-          <h2 className="font-bold text-2xl">お問い合わせ</h2>
-
-          <div className="w-9/12 m-auto bg-white border border-gray rounded-lg py-10 px-16 mt-6 flex flex-col gap-5">
-            <div className="form-group">
-              <label>お名前</label>
-              <input className="border rounded-md ml-auto w-9/12" type="text" />
-            </div>
-            <div className="form-group">
-              <label>メールアドレス</label>
-              <input
-                className="border rounded-md  ml-auto w-9/12"
-                type="text"
-              />
-            </div>
-            <div className="form-group">
-              <label>電話番号</label>
-              <input
-                className="border rounded-md  ml-auto w-9/12"
-                type="text"
-              />
-            </div>
-            <div className="form-group">
-              <label>会社名</label>
-              <input
-                className="border rounded-md  ml-auto w-9/12"
-                type="text"
-              />
-            </div>
-            <div className="textarea-group">
-              <label>お問い合わせ内容</label>
-              <textarea
-                className="border rounded-md  ml-auto w-9/12"
-                name=""
-                id=""
-                cols="30"
-                rows="10"
-              ></textarea>
-            </div>
-            <button className="border w-4/12 py-2 rounded-lg m-auto text-white bg-red-500">
-              送信する
-            </button>
+          <div className="mt-10">
+            <Link
+              href={"/news"}
+              className="mt-8 
+          py-3 px-10 bg-red-500 text-white border rounded-lg"
+            >
+              記事一覧はこちら
+            </Link>
           </div>
         </div>
+
+        {/* <div id="研修" className="pt-20">
+          <h2 className="font-bold text-2xl">研修までの流れ</h2>
+        </div> */}
+
+        <Mail />
       </div>
     </div>
   );
+};
+
+export const getServerSideProps = async () => {
+  const data = await client.get({ endpoint: "news" });
+
+  return {
+    props: {
+      news: data.contents,
+    },
+  };
 };
 
 export default Home;
