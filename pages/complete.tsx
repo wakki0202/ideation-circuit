@@ -1,4 +1,4 @@
-const Complete = () => {
+export default function Complete() {
   return (
     <div className="lg:w-6/12 w-11/12 m-auto">
       <div className="text-center font-bold lg:text-3xl text-xl pt-36">
@@ -20,6 +20,4 @@ const Complete = () => {
       </div>
     </div>
   );
-};
-
-export default Complete;
+}
