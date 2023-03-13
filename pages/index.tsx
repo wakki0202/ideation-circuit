@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Link from "next/link";
 import Mail from "../components/mail";
+import { Link as Scroll } from "react-scroll";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/css";
 import { client } from "../libs/client"; // srcから見た絶対パスで指定
@@ -15,14 +16,70 @@ export default function Home({ news }: Props) {
     <div>
       <header className="top-5 z-50 fixed w-full">
         <div className="flex w-9/12 m-auto justify-between bg-white px-4 py-2 font-bold">
-          <a href="">サービス概要</a>
-          <a href="">3つの学び</a>
-          <a href="">ゲームの概要</a>
-          <a href="">研修動画</a>
-          <a href="">ルール</a>
-          <a href="">お知らせ</a>
-          <a href="">研修までの流れ</a>
-          <a href="">お問い合わせ</a>
+          <Scroll
+            to="about"
+            smooth={true}
+            offset={-50}
+            className="cursor-pointer"
+          >
+            サービス概要
+          </Scroll>
+          <Scroll
+            to="three_merit"
+            smooth={true}
+            offset={-50}
+            className="cursor-pointer"
+          >
+            3つの学び
+          </Scroll>
+          <Scroll
+            to="about_game"
+            smooth={true}
+            offset={-50}
+            className="cursor-pointer"
+          >
+            ゲームの概要
+          </Scroll>
+          <Scroll
+            to="movie"
+            smooth={true}
+            offset={-50}
+            className="cursor-pointer"
+          >
+            研修動画
+          </Scroll>
+          <Scroll
+            to="rule"
+            smooth={true}
+            offset={-50}
+            className="cursor-pointer"
+          >
+            ルール
+          </Scroll>
+          <Scroll
+            to="news"
+            smooth={true}
+            offset={-50}
+            className="cursor-pointer"
+          >
+            お知らせ
+          </Scroll>
+          <Scroll
+            to="training_step"
+            smooth={true}
+            offset={-50}
+            className="cursor-pointer"
+          >
+            研修までの流れ
+          </Scroll>
+          <Scroll
+            to="mail"
+            smooth={true}
+            offset={-50}
+            className="cursor-pointer"
+          >
+            お問い合わせ
+          </Scroll>
         </div>
       </header>
       <div id="mv" className="w-full">
@@ -43,7 +100,7 @@ export default function Home({ news }: Props) {
           </p>
         </div>
 
-        <div id="3つの学び" className="pt-20">
+        <div id="three_merit" className="pt-20">
           <h2 className="font-bold text-2xl">3つの学び</h2>
           <div className="flex gap-5 w-11/12 m-auto mt-4">
             <div className="w-4/12 m-auto">
@@ -85,10 +142,7 @@ export default function Home({ news }: Props) {
           </div>
         </div>
 
-        <div
-          id="ゲームの概要"
-          className="pt-20 text-left w-9/12 m-auto relative"
-        >
+        <div id="about_game" className="pt-20 text-left w-9/12 m-auto relative">
           <h2 className="font-bold text-2xl text-center">ゲームの概要</h2>
 
           <div className="absolute z-10">
@@ -117,7 +171,7 @@ export default function Home({ news }: Props) {
           </div>
         </div>
 
-        <div id="動画でわかるMarketing Town研修" className="pt-20 mt-96">
+        <div id="movie" className="pt-20 mt-96">
           <h2 className="font-bold text-2xl">
             動画でわかるアイディエーション・サーキット研修
           </h2>
@@ -133,7 +187,7 @@ export default function Home({ news }: Props) {
           ></iframe>
         </div>
 
-        <div id="ゲームルール" className="pt-20">
+        <div id="game_rule" className="pt-20">
           <h2 className="font-bold text-2xl">ゲームルール</h2>
           <div
             id="オーダー受注"
@@ -216,7 +270,7 @@ export default function Home({ news }: Props) {
           </div>
 
           <div
-            id="役職決定"
+            id="role_decision"
             className="mt-14 border-4 border-black rounded-sm w-10/12 m-auto py-10"
           >
             <div className="w-11/12 m-auto text-left">
@@ -411,7 +465,7 @@ export default function Home({ news }: Props) {
           </div>
         </div>
 
-        <div id="ideation NEWS" className="pt-20">
+        <div id="news" className="pt-20">
           <h2 className="font-bold text-2xl">ideation NEWS</h2>
 
           <ul className="w-11/12 m-auto flex gap-10">

@@ -1,7 +1,6 @@
 import React from "react";
 import { useState } from "react";
 import Router from "next/router";
-
 import type { NextPage } from "next";
 
 const Mail: NextPage = () => {
@@ -41,7 +40,7 @@ const Mail: NextPage = () => {
 
   return (
     <div data-aos="fade-up" data-aos-duration="800">
-      <div id="お問い合わせ" className="py-20 mb-20">
+      <div id="mail" className="py-20 mb-20">
         <h2 className="font-bold text-2xl">お問い合わせ</h2>
 
         <div className="w-9/12 m-auto bg-white border border-gray rounded-lg py-10 px-16 mt-6 flex flex-col gap-5">
