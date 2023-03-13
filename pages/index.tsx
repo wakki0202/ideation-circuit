@@ -535,14 +535,6 @@ export default function Home({ news }: Props) {
 
         <Mail />
       </div>
-      <div id="card">
-        <div className="back">
-          <img src="/target_card.png" alt="" />
-        </div>
-        <div className="front">
-          <img src="/theme_card.png" alt="" />
-        </div>
-      </div>
     </div>
   );
 }
