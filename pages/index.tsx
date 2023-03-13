@@ -86,6 +86,14 @@ export default function Home({ news }: Props) {
         <img src="/mv_bg.png" alt="" />
       </div>
       <div id="ロゴ"></div>
+      <img src="/man_1.png" alt="" width={400} className="absolute man-1" />
+      <img src="/man_2.png" alt="" width={300} className="absolute man-2" />
+      <img src="/man_3.png" alt="" width={300} className="absolute man-3" />
+      <img src="/man_4.png" alt="" width={300} className="absolute man-4" />
+      <img src="/man_5.png" alt="" width={400} className="absolute man-5" />
+      <img src="/man_6.png" alt="" width={300} className="absolute man-6" />
+      <img src="/man_7.png" alt="" width={250} className="absolute man-7" />
+      <img src="/man_8.png" alt="" width={300} className="absolute man-8" />
       <div id="main" className="text-center w-10/12 m-auto mt-20">
         <div id="about" className="pt-20">
           <h2 className="font-bold text-2xl">
