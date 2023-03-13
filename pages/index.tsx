@@ -85,24 +85,39 @@ export default function Home({ news }: Props) {
           </div>
         </div>
 
-        <div id="ゲームの概要" className="pt-20 text-left w-9/12 m-auto">
+        <div
+          id="ゲームの概要"
+          className="pt-20 text-left w-9/12 m-auto relative"
+        >
           <h2 className="font-bold text-2xl text-center">ゲームの概要</h2>
-          <div className="font-bold text-xl pt-10">
-            <p className="about_game_main_phrase p-1">
-              世の中を変えるためのアイデアを
-            </p>
-            <p className="about_game_main_phrase ml-20 p-1">
-              ここから生み出してください
+
+          <div className="absolute z-10">
+            <div className="font-bold text-xl pt-10">
+              <p className="about_game_main_phrase p-1">
+                世の中を変えるためのアイデアを
+              </p>
+              <p className="about_game_main_phrase ml-20 p-1">
+                ここから生み出してください
+              </p>
+            </div>
+
+            <p className="w-7/12 pt-4 font-bold leading-8 bg-white">
+              このゲームは役職が与えられたプレイヤーがチームを組んでクライアントから出されたテーマとターゲットに沿ったアイデアを考案しプレゼンテーションするゲームです。コインの運用・アイデアに役立つスキル・アイデアの量・人事評価・プレゼンテーション。本当の目的を見失わないようコイン・時間・チームをうまく使いながら、世の中を変えるアイデアをここから生み出してください。
+              勝敗の決定：①保有コインの総額（チーム戦） ②人事評価（個人戦）
             </p>
           </div>
 
-          <p className="w-7/12 pt-4 font-bold leading-8">
-            このゲームは役職が与えられたプレイヤーがチームを組んでクライアントから出されたテーマとターゲットに沿ったアイデアを考案しプレゼンテーションするゲームです。コインの運用・アイデアに役立つスキル・アイデアの量・人事評価・プレゼンテーション。本当の目的を見失わないようコイン・時間・チームをうまく使いながら、世の中を変えるアイデアをここから生み出してください。
-            勝敗の決定：①保有コインの総額（チーム戦） ②人事評価（個人戦）
-          </p>
+          <div className="absolute top-70 right-10">
+            <img
+              src="/theme_card.png"
+              alt=""
+              width={400}
+              className="m-auto mt-4"
+            />
+          </div>
         </div>
 
-        <div id="動画でわかるMarketing Town研修" className="pt-20">
+        <div id="動画でわかるMarketing Town研修" className="pt-20 mt-96">
           <h2 className="font-bold text-2xl">
             動画でわかるアイディエーション・サーキット研修
           </h2>
@@ -122,13 +137,14 @@ export default function Home({ news }: Props) {
           <h2 className="font-bold text-2xl">ゲームルール</h2>
           <div
             id="オーダー受注"
-            className="border-2 border-black rounded-sm w-10/12 m-auto py-10 mt-14"
+            className="border-4 border-black rounded-sm w-10/12 m-auto py-10 mt-14"
           >
             <div className="w-11/12 m-auto text-left">
-              <p className="flex items-center">
-                <span className="text-3xl">01</span>オーダー受注
+              <p className="flex items-center font-bold text-xl gap-2">
+                <img src="/step_1.png" alt="" width={50} />
+                <span className="text-5xl">01</span>オーダー受注
               </p>
-              <p className="text-left">
+              <p className="text-left text-lg pt-6">
                 3人から5人で1組のチームを作ります。
                 <br />
                 初期資産100コインを受け取ってください。
@@ -201,13 +217,14 @@ export default function Home({ news }: Props) {
 
           <div
             id="役職決定"
-            className="mt-14 border-2 border-black rounded-sm w-10/12 m-auto py-10"
+            className="mt-14 border-4 border-black rounded-sm w-10/12 m-auto py-10"
           >
             <div className="w-11/12 m-auto text-left">
-              <p className="flex items-center">
-                <span className="text-3xl">02</span>役職決定
+              <p className="flex items-center font-bold text-xl gap-2">
+                <img src="/step_2.png" alt="" width={50} />
+                <span className="text-5xl">02</span>役職決定
               </p>
-              <p className="text-left">
+              <p className="text-left text-lg pt-6">
                 チームで誰がどの役職になるかを決めます。
                 <br />
                 役職カードはスキルと価値発揮ポイントを得るための条件が書いています。
@@ -272,13 +289,14 @@ export default function Home({ news }: Props) {
 
           <div
             id="ゲーム進行"
-            className="mt-14 border-2 border-black rounded-sm w-10/12 m-auto py-10"
+            className="mt-14 border-4 border-black rounded-sm w-10/12 m-auto py-10"
           >
             <div className="w-11/12 m-auto text-left">
-              <p className="flex items-center">
-                <span className="text-3xl">03</span>ゲーム進行
+              <p className="flex items-center font-bold text-xl gap-2">
+                <img src="/step_3.png" alt="" width={50} />
+                <span className="text-5xl">03</span>ゲーム進行
               </p>
-              <p className="text-left font-bold">
+              <p className="text-left font-bold text-lg pt-6">
                 <span className="bg-half-gray">
                   チームで誰がどの役職になるかを決めます。
                 </span>
@@ -287,37 +305,107 @@ export default function Home({ news }: Props) {
                   役職カードにはスキルと最高人事評価Sを得るための条件が書いています。
                 </span>
               </p>
+
+              <div id="カード3枚" className="flex gap-6 mt-10">
+                <div className="border-4 border-black rounded-lg p-5 w-4/12 font-bold">
+                  <p className="text-2xl text-center">アイデアブレスト</p>
+                  <p className="py-3">
+                    スキルやコインを使わずにテーマに沿ったアイデアを出してみましょう
+                  </p>
+                  <p>例）テーマ 未来の交通手段</p>
+                </div>
+                <div className="border-4 border-black rounded-lg p-5 w-4/12 font-bold">
+                  <p className="text-2xl  text-center">抽象化コンセプト</p>
+                  <p className="text-left py-3">
+                    1で出たアイデアを抽象化してみましょう。
+                  </p>
+                  <p>アイデア：1人用電車</p>
+                  <p>抽象化：個別化/インフラ/ソロ</p>
+                </div>
+                <div className="border-4 border-black rounded-lg p-5 w-4/12 font-bold">
+                  <p className="text-2xl text-center leading-4">
+                    アイディエーション
+                    <br />
+                    <span className="text-xl">&</span>
+                    <br />
+                    プレゼン
+                  </p>
+                  <p className="pt-5">
+                    スキルやコインを使いながら、アイデアを固めプレゼンテーションを行います。
+                  </p>
+                </div>
+              </div>
+              <div className="w-4/12 ml-auto">
+                <p className="text-center font-bold text-3xl">↓</p>
+              </div>
+
+              <div className="flex border-4 border-black rounded-lg p-5">
+                <div className="border-r-4 border-black border-dashed w-4/12 font-bold text-center p-3 text-xl">
+                  <p className="text-center">スキルの使用 20コイン</p>
+                  <p className="text-sm">ボスマネージャーは必要なし。</p>
+                </div>
+                <div className="border-r-4 border-black border-dashed w-4/12 font-bold p-3 text-xl">
+                  <p className="text-center">登記 20コイン</p>
+                  <p className="text-sm">
+                    30コイン単位で融資を受けられます。
+                    <br />
+                    ゲーム終了前に40コイン単位で返済です。
+                  </p>
+                </div>
+                <div className="w-4/12  font-bold  p-3 text-xl">
+                  <p className="text-center">プレゼン 20コイン</p>
+                  <p className="text-sm">
+                    事務局でエントリー後、クライアントにプレゼン。1アイデアごとに評価が付くためプレゼンをすればするほど報酬をもらえる確率が上がります。
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
           <div
             id="ゲーム終了"
-            className="mt-14 border-2 border-black rounded-sm w-10/12 m-auto py-10"
+            className="mt-14 border-4 border-black rounded-sm w-10/12 m-auto py-10"
           >
             <div className="w-11/12 m-auto text-left">
-              <h3 className="flex items-center">
-                <span className="text-3xl">04</span>ゲーム進行
+              <h3 className="flex items-center font-bold gap-2 text-xl">
+                <img src="/step_4.png" alt="" width={50} />
+                <span className="text-5xl">04</span>ゲーム進行
               </h3>
-              <div>
-                <h4 className="text-left text-2xl bg-half-gray">
+
+              <h4 className="font-bold bg-half-gray text-3xl my-6">
+                2つの勝敗
+              </h4>
+              <div className="pt-6">
+                <h4 className="text-left text-xl bg-half-gray font-bold">
                   1.チーム優勝
                 </h4>
-                <p className="text-xl">
+                <p className="text-xl font-bold pt-2">
                   プレゼン順位で報酬が与えられ、チームごとのコイン総額を競う。
                 </p>
 
-                <p>▶︎ 評価基準</p>
-                <div className="flex">
-                  <p>新規制</p>
-                  <p>実現可能性</p>
-                  <p>社会的インパクト</p>
+                <p className="pt-3 font-bold">▶︎ 評価基準</p>
+                <div className="flex gap-2 text-white pt-1">
+                  <p className="base-evaluation  px-6 rounded-xl">新規制</p>
+                  <p className="base-evaluation  px-6 rounded-xl">実現可能性</p>
+                  <p className="base-evaluation  px-6 rounded-xl">
+                    社会的インパクト
+                  </p>
                 </div>
+                <img
+                  src="/rank_coin_board.png"
+                  alt=""
+                  width={600}
+                  className="pt-3"
+                />
               </div>
 
-              <div>
-                <h4 className="text-left text-2xl bg-half-gray">2.個人優勝</h4>
-                <p className="text-xl">
+              <div className="pt-10">
+                <h4 className="text-left text-xl bg-half-gray font-bold">
+                  2.個人優勝
+                </h4>
+                <p className="text-xl font-bold pt-2">
                   役職ごとの人事評価ランクにより1人1人の市場価値が割り出され個人優勝が決まる。
                 </p>
+                <img src="/part_board.png" alt="" />
               </div>
             </div>
           </div>

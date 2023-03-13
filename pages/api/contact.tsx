@@ -7,8 +7,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     host: "smtp.gmail.com",
     secure: true,
     auth: {
-      user: "ytk.jagaimo@gmail.com",
-      pass: "llbfcxsvmyitgkqt",
+      user: process.env.GMAIL,
+      pass: process.env.AUTH_PASS,
     },
   });
 
@@ -20,8 +20,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     to: data.email,
     subject: "以下の内容でお問い合わせを受け付けました",
     text: `
-    会社名
-    ${data.company}
 
     名前
     ${data.name}
@@ -43,8 +41,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     to: "ytk0202@outlook.jp",
     subject: `【お問い合わせ】${data.name}様より`,
     text: `
-    会社名
-    ${data.company}
 
     名前
     ${data.name}

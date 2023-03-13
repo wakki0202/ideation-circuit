@@ -42,3 +42,7 @@ h2 {
 .splide .splide__pagination {
   display: none;
 }
+
+.base-evaluation {
+  background-color: #82c461;
+}

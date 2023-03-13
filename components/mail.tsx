@@ -7,7 +7,6 @@ import type { NextPage } from "next";
 const Mail: NextPage = () => {
   const [showModal, setShowModal] = React.useState(false);
   const [form, setForm] = useState({
-    company: "",
     name: "",
     email: "",
     phoneNumber: "",
@@ -21,7 +20,6 @@ const Mail: NextPage = () => {
       method: "POST",
       body: JSON.stringify({
         name: form.name,
-        company: form.company,
         email: form.email,
         phoneNumber: form.phoneNumber,
         msg: form.msg,
@@ -89,21 +87,6 @@ const Mail: NextPage = () => {
                 }));
               }}
               name="phoneNumber"
-              type="text"
-              className="border rounded-md  ml-auto w-9/12"
-            />
-          </div>
-          <div className="form-group">
-            <label>会社名</label>
-            <input
-              onChange={(e) => {
-                const val = e.currentTarget.value;
-                setForm((props) => ({
-                  ...props,
-                  company: val !== null ? val : "",
-                }));
-              }}
-              name="company"
               type="text"
               className="border rounded-md  ml-auto w-9/12"
             />
