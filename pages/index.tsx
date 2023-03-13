@@ -206,14 +206,20 @@ export default function Home({ news }: Props) {
                 <img src="/step_1.png" alt="" width={50} />
                 <span className="text-5xl">01</span>オーダー受注
               </p>
-              <p className="text-left text-lg pt-6">
-                3人から5人で1組のチームを作ります。
+              <p className="text-left text-lg pt-6 font-bold ">
+                <span className="bg-half-gray">
+                  3人から5人で1組のチームを作ります。
+                </span>
                 <br />
-                初期資産100コインを受け取ってください。
+                <span className="bg-half-gray">
+                  初期資産100コインを受け取ってください。
+                </span>
                 <br />
-                クライアントからテーマとターゲットのオーダーを受けアイデアブレストに入ります。
+                <span className="bg-half-gray">
+                  クライアントからテーマとターゲットのオーダーを受けアイデアブレストに入ります。
+                </span>
               </p>
-              <div className="flex mt-10">
+              <div className="flex mt-10 font-bold">
                 <div className="w-3/6 m-auto">
                   <p className="font-bold text-2xl text-center">テーマカード</p>
                   <img
@@ -246,7 +252,7 @@ export default function Home({ news }: Props) {
               <p className="text-xl font-bold mt-20 text-center">
                 【その他カード】
               </p>
-              <div className="flex mt-7">
+              <div className="flex mt-7 font-bold">
                 <div className="w-3/6 m-auto">
                   <p className="font-bold text-2xl text-center">
                     ユニークカード
@@ -286,10 +292,14 @@ export default function Home({ news }: Props) {
                 <img src="/step_2.png" alt="" width={50} />
                 <span className="text-5xl">02</span>役職決定
               </p>
-              <p className="text-left text-lg pt-6">
-                チームで誰がどの役職になるかを決めます。
+              <p className="text-left text-lg pt-6 font-bold">
+                <span className="bg-half-gray">
+                  チームで誰がどの役職になるかを決めます。
+                </span>
                 <br />
-                役職カードはスキルと価値発揮ポイントを得るための条件が書いています。
+                <span className="bg-half-gray">
+                  役職カードはスキルと価値発揮ポイントを得るための条件が書いています。
+                </span>
               </p>
 
               <p className="text-2xl font-bold mt-10 text-center">役職カード</p>
