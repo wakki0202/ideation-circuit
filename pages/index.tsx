@@ -85,6 +85,7 @@ export default function Home({ news }: Props) {
       <div id="mv" className="w-full">
         <img src="/mv_bg.png" alt="" />
       </div>
+
       <div id="ロゴ"></div>
       <img src="/man_1.png" alt="" width={400} className="absolute man-1" />
       <img src="/man_2.png" alt="" width={300} className="absolute man-2" />
@@ -222,12 +223,15 @@ export default function Home({ news }: Props) {
               <div className="flex mt-10 font-bold">
                 <div className="w-3/6 m-auto">
                   <p className="font-bold text-2xl text-center">テーマカード</p>
-                  <img
-                    src="/theme_card.png"
-                    alt=""
-                    width={350}
-                    className="m-auto mt-4"
-                  />
+
+                  <div id="card">
+                    <div className="back">
+                      <img src="/theme_card.png" alt="" width={400} />
+                    </div>
+                    <div className="front">
+                      <img src="/theme_front.png" alt="" width={400} />
+                    </div>
+                  </div>
                   <p className="text-md text-center mt-3">
                     考えるアイデアのテーマが書かれています。
                   </p>
@@ -236,12 +240,14 @@ export default function Home({ news }: Props) {
                   <p className="font-bold text-2xl text-center">
                     ターゲットカード
                   </p>
-                  <img
-                    src="/target_card.png"
-                    alt=""
-                    width={350}
-                    className="m-auto mt-4"
-                  />
+                  <div id="card">
+                    <div className="back">
+                      <img src="/target_card.png" alt="" width={400} />
+                    </div>
+                    <div className="front">
+                      <img src="/target_front.png" alt="" width={400} />
+                    </div>
+                  </div>
                   <p className="text-md text-center mt-3">
                     ターゲットとなる人物像の属性と趣向が書かれています。
                     <br />
@@ -257,24 +263,28 @@ export default function Home({ news }: Props) {
                   <p className="font-bold text-2xl text-center">
                     ユニークカード
                   </p>
-                  <img
-                    src="/unique_card.png"
-                    alt=""
-                    width={350}
-                    className="m-auto mt-4"
-                  />
+                  <div id="card">
+                    <div className="back">
+                      <img src="/unique_card.png" alt="" width={400} />
+                    </div>
+                    <div className="front">
+                      <img src="/unique_front.png" alt="" width={400} />
+                    </div>
+                  </div>
                   <p className="text-md text-center mt-3">
                     独創性を加速させるキーワードが書かれています。
                   </p>
                 </div>
                 <div className="w-3/6 m-auto">
                   <p className="font-bold text-2xl text-center">ヒントカード</p>
-                  <img
-                    src="/hint_card.png"
-                    alt=""
-                    width={350}
-                    className="m-auto mt-4"
-                  />
+                  <div id="card">
+                    <div className="back">
+                      <img src="/hint_card.png" alt="" width={400} />
+                    </div>
+                    <div className="front">
+                      <img src="/hint_front.png" alt="" width={400} />
+                    </div>
+                  </div>
                   <p className="text-md text-center mt-3">
                     アイデア発想を加速させるヒントが書かれています。
                   </p>
@@ -524,6 +534,14 @@ export default function Home({ news }: Props) {
         </div> */}
 
         <Mail />
+      </div>
+      <div id="card">
+        <div className="back">
+          <img src="/target_card.png" alt="" />
+        </div>
+        <div className="front">
+          <img src="/theme_card.png" alt="" />
+        </div>
       </div>
     </div>
   );
