@@ -198,12 +198,12 @@ export default function Home({ news }: Props) {
           <h2 className="font-bold text-2xl">ゲームルール</h2>
           <div
             id="オーダー受注"
-            className="border-4 border-black rounded-sm w-10/12 m-auto py-10 mt-14"
+            className="border-4 border-black rounded-sm w-10/12 m-auto py-10 mt-14 relative"
           >
             <div className="w-11/12 m-auto text-left">
-              <p className="flex flex-col lg:flex-row items-center font-bold text-xl gap-2">
-                <img src="/step_1.png" alt="" width={50} />
-                <span className="text-5xl">01</span>オーダー受注
+              <p className="rule-section-title flex flex-col lg:flex-row items-center font-bold text-2xl gap-2">
+                <img src="/step_1.png" alt="" width={60} />
+                <span className="text-7xl">01</span>オーダー受注
               </p>
               <p className="text-left text-lg pt-6 font-bold ">
                 <span className="bg-half-gray">
@@ -293,12 +293,12 @@ export default function Home({ news }: Props) {
 
           <div
             id="role_decision"
-            className="mt-14 border-4 border-black rounded-sm w-11/12 lg:w-10/12 m-auto py-10"
+            className="mt-14 border-4 border-black rounded-sm w-11/12 lg:w-10/12 m-auto py-10 relative"
           >
             <div className="w-11/12 m-auto text-left">
-              <p className="flex items-center font-bold text-xl gap-2">
-                <img src="/step_2.png" alt="" width={50} />
-                <span className="text-5xl">02</span>役職決定
+              <p className="rule-section-title flex items-center font-bold text-2xl gap-2">
+                <img src="/step_2.png" alt="" width={60} />
+                <span className="text-7xl">02</span>役職決定
               </p>
               <p className="text-left text-lg pt-6 font-bold">
                 <span className="bg-half-gray">
@@ -421,12 +421,12 @@ export default function Home({ news }: Props) {
 
           <div
             id="ゲーム進行"
-            className="mt-14 border-4 border-black rounded-sm w-10/12 m-auto py-10"
+            className="mt-14 border-4 border-black rounded-sm w-10/12 m-auto py-10 relative"
           >
             <div className="w-11/12 m-auto text-left">
-              <p className="flex items-center font-bold text-xl gap-2">
-                <img src="/step_3.png" alt="" width={50} />
-                <span className="text-5xl">03</span>ゲーム進行
+              <p className="rule-section-title flex items-center font-bold text-2xl gap-2">
+                <img src="/step_3.png" alt="" width={60} />
+                <span className="text-7xl">03</span>ゲーム進行
               </p>
               <p className="text-left font-bold text-lg pt-6">
                 <span className="bg-half-gray">
@@ -502,15 +502,15 @@ export default function Home({ news }: Props) {
           </div>
           <div
             id="ゲーム終了"
-            className="mt-14 border-4 border-black rounded-sm w-10/12 m-auto py-10"
+            className="mt-14 border-4 border-black rounded-sm w-10/12 m-auto pb-10"
           >
-            <div className="w-11/12 m-auto text-left">
-              <h3 className="flex items-center font-bold gap-2 text-xl">
-                <img src="/step_4.png" alt="" width={50} />
-                <span className="text-5xl">04</span>ゲーム進行
+            <div className="w-11/12 m-auto text-left relative">
+              <h3 className="rule-section-title4 flex items-center font-bold gap-2 text-2xl">
+                <img src="/step_4.png" alt="" width={60} />
+                <span className="text-7xl">04</span>ゲーム進行
               </h3>
 
-              <h4 className="font-bold bg-half-gray text-3xl my-6">
+              <h4 className="font-bold bg-half-gray text-3xl mt-16 mb-2">
                 2つの勝敗
               </h4>
               <div className="pt-6">
