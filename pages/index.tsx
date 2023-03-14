@@ -188,9 +188,9 @@ export default function Home({ news }: Props) {
           <iframe
             width="700"
             height="400"
-            src="https://www.youtube.com/embed/_JWtEUDhveo"
+            src="/trial.mp4"
             title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allow="accelerometer;  clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
             className="mt-10 m-auto"
           ></iframe>
