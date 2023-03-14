@@ -181,42 +181,42 @@ h2 {
   .man-7,
   .man-8 {
     position: absolute;
-    width: 50px;
+    width: 100px;
   }
 
   .man-1 {
-    top: 800px;
-    left: -20px;
+    top: 650px;
+    left: -30px;
   }
 
   .man-2 {
-    top: 1500px;
-    right: 0px;
+    top: 1450px;
+    right: -30px;
   }
 
   .man-3 {
-    top: 2300px;
+    top: 2200px;
     left: -20px;
   }
   .man-4 {
     top: 3500px;
-    right: 0px;
+    right: -30px;
   }
   .man-5 {
-    top: 4500px;
-    left: -20px;
+    top: 4600px;
+    left: -30px;
   }
   .man-6 {
-    top: 6300px;
-    right: 0px;
+    top: 7300px;
+    right: -30px;
   }
   .man-7 {
-    top: 6600px;
+    top: 11000px;
     left: -20px;
   }
   .man-8 {
-    top: 7500px;
-    right: 0px;
+    top: 12300px;
+    right: -30px;
   }
 
   .splide .splide__arrow {

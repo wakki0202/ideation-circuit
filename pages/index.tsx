@@ -521,7 +521,7 @@ export default function Home({ news }: Props) {
                   <p className="text-center">スキルの使用 20コイン</p>
                   <p className="text-sm">ボスマネージャーは必要なし。</p>
                 </div>
-                <div className="border-b-4 lg:border-r-4 border-black border-dashed w-11/12 lg:w-4/12 font-bold p-3 text-xl">
+                <div className="border-b-4 lg:border-b-0 lg:border-r-4 border-black border-dashed w-11/12 lg:w-4/12 font-bold p-3 text-xl">
                   <p className="text-center">登記 20コイン</p>
                   <p className="text-sm">
                     30コイン単位で融資を受けられます。
@@ -635,38 +635,26 @@ export default function Home({ news }: Props) {
               .slice(0, 3)}
           </ul>
 
-          <ul className="lg:hidden">
-            <Splide
-              aria-label=""
-              options={{
-                rewind: true,
-                perPage: 1,
-                perMove: 1,
-                type: "loop",
-              }}
-            >
-              {news
-                .map((news) => (
-                  <SplideSlide>
-                    <li key={news.id} className="my-5 w-9/12 m-auto">
-                      <Link
-                        href={`/news/${news.id}`}
-                        className="font-bold text-left"
-                      >
-                        <img
-                          className="rounded-t-lg"
-                          src={news.eyeCatch.url}
-                          alt="Sunset in the mountains"
-                        />
-                        <p className="text-left border-b border-x px-3 pt-2 pb-6 border-black rounded-b-lg bg-gray-700 text-white">
-                          {news.title}
-                        </p>
-                      </Link>
-                    </li>
-                  </SplideSlide>
-                ))
-                .slice(0, 3)}
-            </Splide>
+          <ul className="w-11/12 m-auto flex gap-10 lg:hidden">
+            {news
+              .map((news) => (
+                <li key={news.id} className="my-5 w-9/12 m-auto">
+                  <Link
+                    href={`/news/${news.id}`}
+                    className="font-bold text-left"
+                  >
+                    <img
+                      className="rounded-t-lg"
+                      src={news.eyeCatch.url}
+                      alt="Sunset in the mountains"
+                    />
+                    <p className="text-left border-b border-x px-3 pt-2 pb-6 border-black rounded-b-lg bg-gray-700 text-white">
+                      {news.title}
+                    </p>
+                  </Link>
+                </li>
+              ))
+              .slice(0, 1)}
           </ul>
 
           <div className="mt-10">
