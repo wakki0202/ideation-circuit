@@ -218,4 +218,21 @@ h2 {
     top: 7500px;
     right: 0px;
   }
+
+  .splide .splide__arrow {
+    background-color: transparent;
+  }
+
+  .splide .splide__arrow--prev {
+    left: -2em;
+  }
+  .splide .splide__arrow--next {
+    right: -2em;
+  }
+
+  #card::before {
+    content: "";
+    display: block;
+    padding-top: 210px;
+  }
 }

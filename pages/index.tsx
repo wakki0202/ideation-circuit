@@ -153,7 +153,10 @@ export default function Home({ news }: Props) {
           </div>
         </div>
 
-        <div id="about_game" className="pt-20 text-left w-9/12 m-auto relative">
+        <div
+          id="about_game"
+          className="pt-20 text-left w-11/12 lg:w-9/12 m-auto relative"
+        >
           <h2 className="font-bold text-2xl text-center">ゲームの概要</h2>
           <div className="lg:absolute lg:top-70 lg:right-10">
             <img
@@ -164,16 +167,16 @@ export default function Home({ news }: Props) {
             />
           </div>
           <div className="lg:absolute z-10">
-            <div className="font-bold text-xl pt-10">
+            <div className="font-bold text-lg lg:text-xl pt-10">
               <p className="about_game_main_phrase p-1">
                 世の中を変えるためのアイデアを
               </p>
-              <p className="about_game_main_phrase ml-20 p-1">
+              <p className="about_game_main_phrase ml-16 p-1">
                 ここから生み出してください
               </p>
             </div>
 
-            <p className="w-7/12 pt-4 font-bold leading-8 bg-white">
+            <p className="w-11/12 m-auto lg:m-0 lg:w-7/12 pt-4 font-bold leading-8 bg-white">
               このゲームは役職が与えられたプレイヤーがチームを組んでクライアントから出されたテーマとターゲットに沿ったアイデアを考案しプレゼンテーションするゲームです。コインの運用・アイデアに役立つスキル・アイデアの量・人事評価・プレゼンテーション。本当の目的を見失わないようコイン・時間・チームをうまく使いながら、世の中を変えるアイデアをここから生み出してください。
               勝敗の決定：①保有コインの総額（チーム戦） ②人事評価（個人戦）
             </p>
@@ -198,14 +201,25 @@ export default function Home({ news }: Props) {
           <h2 className="font-bold text-2xl">ゲームルール</h2>
           <div
             id="オーダー受注"
-            className="border-4 border-black rounded-sm w-10/12 m-auto py-10 mt-14 relative"
+            className="lg:border-4 lg:border-black rounded-sm w-11/12 lg:w-10/12 m-auto py-10 mt-20 lg:mt-14 relative"
           >
             <div className="w-11/12 m-auto text-left">
-              <p className="rule-section-title flex flex-col lg:flex-row items-center font-bold text-2xl gap-2">
-                <img src="/step_1.png" alt="" width={60} />
-                <span className="text-7xl">01</span>オーダー受注
+              <p className="rule-section-title flex  items-center font-bold text-xl lg:text-2xl gap-2">
+                <img
+                  src="/step_1.png"
+                  alt=""
+                  width={60}
+                  className="hidden lg:block"
+                />
+                <img
+                  src="/step_1.png"
+                  alt=""
+                  width={40}
+                  className="lg:hidden"
+                />
+                <span className="text-5xl lg:text-7xl">01</span>オーダー受注
               </p>
-              <p className="text-left text-lg pt-6 font-bold ">
+              <p className="text-left text-md lg:text-lg pt-6 font-bold ">
                 <span className="bg-half-gray">
                   3人から5人で1組のチームを作ります。
                 </span>
@@ -219,7 +233,7 @@ export default function Home({ news }: Props) {
                 </span>
               </p>
               <div className="flex flex-col lg:flex-row mt-10 font-bold">
-                <div className="w-3/6 m-auto">
+                <div className="w-full lg:w-3/6 m-auto">
                   <p className="font-bold text-2xl text-center">テーマカード</p>
 
                   <div id="card">
@@ -230,11 +244,11 @@ export default function Home({ news }: Props) {
                       <img src="/theme_front.png" alt="" width={400} />
                     </div>
                   </div>
-                  <p className="text-md text-center mt-3">
+                  <p className="text-md text-left lg:text-center mt-3">
                     考えるアイデアのテーマが書かれています。
                   </p>
                 </div>
-                <div className="w-3/6 m-auto mt-5">
+                <div className="w-full lg:w-3/6 m-auto mt-5">
                   <p className="font-bold text-2xl text-center">
                     ターゲットカード
                   </p>
@@ -246,18 +260,19 @@ export default function Home({ news }: Props) {
                       <img src="/target_front.png" alt="" width={400} />
                     </div>
                   </div>
-                  <p className="text-md text-center mt-3">
+
+                  <p className="text-md text-left lg:text-center mt-3">
                     ターゲットとなる人物像の属性と趣向が書かれています。
                     <br />
                     ただし、趣向は明かされません。
                   </p>
                 </div>
               </div>
-              <p className="text-xl font-bold mt-20 text-center">
+              <p className="text-xl font-bold mt-14 lg:mt-20 text-center">
                 【その他カード】
               </p>
               <div className="flex flex-col lg:flex-row mt-7 font-bold">
-                <div className="w-3/6 m-auto">
+                <div className="w-full lg:w-3/6 m-auto">
                   <p className="font-bold text-2xl text-center">
                     ユニークカード
                   </p>
@@ -269,11 +284,11 @@ export default function Home({ news }: Props) {
                       <img src="/unique_front.png" alt="" width={400} />
                     </div>
                   </div>
-                  <p className="text-md text-center mt-3">
+                  <p className="text-md text-left lg:text-center mt-3">
                     独創性を加速させるキーワードが書かれています。
                   </p>
                 </div>
-                <div className="w-3/6 m-auto">
+                <div className="w-full lg:w-3/6 m-auto">
                   <p className="font-bold text-2xl text-center">ヒントカード</p>
                   <div id="card">
                     <div className="back">
@@ -283,7 +298,7 @@ export default function Home({ news }: Props) {
                       <img src="/hint_front.png" alt="" width={400} />
                     </div>
                   </div>
-                  <p className="text-md text-center mt-3">
+                  <p className="text-md text-left lg:text-center mt-3">
                     アイデア発想を加速させるヒントが書かれています。
                   </p>
                 </div>
@@ -293,14 +308,25 @@ export default function Home({ news }: Props) {
 
           <div
             id="role_decision"
-            className="mt-14 border-4 border-black rounded-sm w-11/12 lg:w-10/12 m-auto py-10 relative"
+            className="mt-14 lg:border-4 lg:border-black rounded-sm w-11/12 lg:w-10/12 m-auto py-10 relative"
           >
             <div className="w-11/12 m-auto text-left">
-              <p className="rule-section-title flex items-center font-bold text-2xl gap-2">
-                <img src="/step_2.png" alt="" width={60} />
-                <span className="text-7xl">02</span>役職決定
+              <p className="rule-section-title flex items-center font-bold text-xl lg:text-2xl gap-2">
+                <img
+                  src="/step_2.png"
+                  alt=""
+                  width={60}
+                  className="hidden lg:block"
+                />
+                <img
+                  src="/step_2.png"
+                  alt=""
+                  width={40}
+                  className="lg:hidden"
+                />
+                <span className="text-5xl lg:text-7xl">02</span>役職決定
               </p>
-              <p className="text-left text-lg pt-6 font-bold">
+              <p className="text-left text-md lg:text-lg pt-1 lg:pt-6 font-bold">
                 <span className="bg-half-gray">
                   チームで誰がどの役職になるかを決めます。
                 </span>
@@ -421,14 +447,25 @@ export default function Home({ news }: Props) {
 
           <div
             id="ゲーム進行"
-            className="mt-14 border-4 border-black rounded-sm w-10/12 m-auto py-10 relative"
+            className="mt-14 lg:border-4 lg:border-black rounded-sm w-11/12 lg:w-10/12 m-auto py-10 relative"
           >
             <div className="w-11/12 m-auto text-left">
-              <p className="rule-section-title flex items-center font-bold text-2xl gap-2">
-                <img src="/step_3.png" alt="" width={60} />
-                <span className="text-7xl">03</span>ゲーム進行
+              <p className="rule-section-title flex items-center font-bold text-xl lg:text-2xl gap-2">
+                <img
+                  src="/step_3.png"
+                  alt=""
+                  width={60}
+                  className="hidden lg:block"
+                />
+                <img
+                  src="/step_3.png"
+                  alt=""
+                  width={40}
+                  className="lg:hidden"
+                />
+                <span className="text-5xl lg:text-7xl">03</span>ゲーム進行
               </p>
-              <p className="text-left font-bold text-lg pt-6">
+              <p className="text-left font-bold text-lg pt-1 lg:pt-6">
                 <span className="bg-half-gray">
                   チームで誰がどの役職になるかを決めます。
                 </span>
@@ -442,7 +479,7 @@ export default function Home({ news }: Props) {
                 id="カード3枚"
                 className="flex flex-col lg:flex-row gap-6 mt-10"
               >
-                <div className="border-4 border-black rounded-lg p-5  w-11/12  lg:w-4/12 font-bold relative">
+                <div className="border-4 border-black rounded-lg p-5  w-full  lg:w-4/12 font-bold relative">
                   <img src="/badge1.png" alt="" width={40} className="badge" />
                   <p className="text-2xl text-center">アイデアブレスト</p>
                   <p className="py-3">
@@ -450,7 +487,7 @@ export default function Home({ news }: Props) {
                   </p>
                   <p>例）テーマ 未来の交通手段</p>
                 </div>
-                <div className="border-4 border-black rounded-lg p-5 w-11/12 m-auto lg:w-4/12 font-bold  relative">
+                <div className="border-4 border-black rounded-lg p-5 w-full m-auto lg:w-4/12 font-bold  relative">
                   <img src="/badge2.png" alt="" width={40} className="badge" />
                   <p className="text-2xl  text-center">抽象化コンセプト</p>
                   <p className="text-left py-3">
@@ -459,7 +496,7 @@ export default function Home({ news }: Props) {
                   <p>アイデア：1人用電車</p>
                   <p>抽象化：個別化/インフラ/ソロ</p>
                 </div>
-                <div className="border-4 border-black rounded-lg p-5  w-11/12 m-auto lg:w-4/12 font-bold  relative">
+                <div className="border-4 border-black rounded-lg p-5  w-full m-auto lg:w-4/12 font-bold  relative">
                   <img src="/badge3.png" alt="" width={40} className="badge" />
                   <p className="text-2xl text-center leading-4">
                     アイディエーション
@@ -473,17 +510,18 @@ export default function Home({ news }: Props) {
                   </p>
                 </div>
               </div>
-              <div className="w-4/12 ml-auto">
+
+              <div className="w-4/12 ml-auto lg:block hidden">
                 <p className="text-center font-bold text-3xl">↓</p>
               </div>
 
-              <div className="flex border-4 border-black rounded-lg p-5 relative">
+              <div className="flex flex-col lg:flex-row border-4 border-black rounded-lg p-5 relative mt-10 lg:mt-0">
                 <img src="/badge4.png" alt="" width={350} className="badge" />
-                <div className="border-r-4 border-black border-dashed w-4/12 font-bold text-center p-3 text-xl">
+                <div className="border-b-4 lg:border-r-4 border-black border-dashed w-11/12 lg:w-4/12 font-bold text-center p-3 text-xl">
                   <p className="text-center">スキルの使用 20コイン</p>
                   <p className="text-sm">ボスマネージャーは必要なし。</p>
                 </div>
-                <div className="border-r-4 border-black border-dashed w-4/12 font-bold p-3 text-xl">
+                <div className="border-b-4 lg:border-r-4 border-black border-dashed w-11/12 lg:w-4/12 font-bold p-3 text-xl">
                   <p className="text-center">登記 20コイン</p>
                   <p className="text-sm">
                     30コイン単位で融資を受けられます。
@@ -491,7 +529,7 @@ export default function Home({ news }: Props) {
                     ゲーム終了前に40コイン単位で返済です。
                   </p>
                 </div>
-                <div className="w-4/12  font-bold  p-3 text-xl">
+                <div className="w-11/12 lg:w-4/12  font-bold  p-3 text-xl">
                   <p className="text-center">プレゼン 20コイン</p>
                   <p className="text-sm">
                     事務局でエントリー後、クライアントにプレゼン。1アイデアごとに評価が付くためプレゼンをすればするほど報酬をもらえる確率が上がります。
@@ -502,12 +540,23 @@ export default function Home({ news }: Props) {
           </div>
           <div
             id="ゲーム終了"
-            className="mt-14 border-4 border-black rounded-sm w-10/12 m-auto pb-10"
+            className="mt-32 lg:mt-14 lg:border-4 lg:border-black rounded-sm w-11/12 lg:w-10/12 m-auto pb-10"
           >
             <div className="w-11/12 m-auto text-left relative">
-              <h3 className="rule-section-title4 flex items-center font-bold gap-2 text-2xl">
-                <img src="/step_4.png" alt="" width={60} />
-                <span className="text-7xl">04</span>ゲーム進行
+              <h3 className="rule-section-title4 flex items-center font-bold gap-2 text-xl lg:text-2xl">
+                <img
+                  src="/step_4.png"
+                  alt=""
+                  width={60}
+                  className="hidden lg:block"
+                />
+                <img
+                  src="/step_4.png"
+                  alt=""
+                  width={40}
+                  className="lg:hidden"
+                />
+                <span className="text-5xl lg:text-7xl">04</span>ゲーム進行
               </h3>
 
               <h4 className="font-bold bg-half-gray text-3xl mt-16 mb-2">
@@ -517,15 +566,19 @@ export default function Home({ news }: Props) {
                 <h4 className="text-left text-xl bg-half-gray font-bold">
                   1.チーム優勝
                 </h4>
-                <p className="text-xl font-bold pt-2">
+                <p className="text-lg lg:text-xl font-bold pt-2">
                   プレゼン順位で報酬が与えられ、チームごとのコイン総額を競う。
                 </p>
 
                 <p className="pt-3 font-bold">▶︎ 評価基準</p>
-                <div className="flex gap-2 text-white pt-1">
-                  <p className="base-evaluation  px-6 rounded-xl">新規制</p>
-                  <p className="base-evaluation  px-6 rounded-xl">実現可能性</p>
-                  <p className="base-evaluation  px-6 rounded-xl">
+                <div className="flex gap-2 text-white pt-1 text-sm">
+                  <p className="base-evaluation px-2 lg:px-6 rounded-xl">
+                    新規制
+                  </p>
+                  <p className="base-evaluation px-2 lg:px-6 rounded-xl">
+                    実現可能性
+                  </p>
+                  <p className="base-evaluation px-2 lg:px-6 rounded-xl">
                     社会的インパクト
                   </p>
                 </div>
@@ -544,7 +597,14 @@ export default function Home({ news }: Props) {
                 <p className="text-xl font-bold pt-2">
                   役職ごとの人事評価ランクにより1人1人の市場価値が割り出され個人優勝が決まる。
                 </p>
-                <img src="/part_board.png" alt="" />
+                <img src="/part_board.png" alt="" className="hidden lg:block" />
+                <div className="lg:hidden">
+                  <img src="/boss_sp.png" alt="" />
+                  <img src="/manager_sp.png" alt="" />
+                  <img src="/creator_sp.png" alt="" />
+                  <img src="/producer_sp.png" alt="" />
+                  <img src="/marketer_sp.png" alt="" />
+                </div>
               </div>
             </div>
           </div>
@@ -553,7 +613,7 @@ export default function Home({ news }: Props) {
         <div id="news" className="pt-20">
           <h2 className="font-bold text-2xl">ideation NEWS</h2>
 
-          <ul className="w-11/12 m-auto flex gap-10">
+          <ul className="w-11/12 m-auto flex gap-10 hidden lg:block">
             {news
               .map((news) => (
                 <li key={news.id} className="my-5 w-9/12 m-auto">
@@ -573,6 +633,40 @@ export default function Home({ news }: Props) {
                 </li>
               ))
               .slice(0, 3)}
+          </ul>
+
+          <ul className="lg:hidden">
+            <Splide
+              aria-label=""
+              options={{
+                rewind: true,
+                perPage: 1,
+                perMove: 1,
+                type: "loop",
+              }}
+            >
+              {news
+                .map((news) => (
+                  <SplideSlide>
+                    <li key={news.id} className="my-5 w-9/12 m-auto">
+                      <Link
+                        href={`/news/${news.id}`}
+                        className="font-bold text-left"
+                      >
+                        <img
+                          className="rounded-t-lg"
+                          src={news.eyeCatch.url}
+                          alt="Sunset in the mountains"
+                        />
+                        <p className="text-left border-b border-x px-3 pt-2 pb-6 border-black rounded-b-lg bg-gray-700 text-white">
+                          {news.title}
+                        </p>
+                      </Link>
+                    </li>
+                  </SplideSlide>
+                ))
+                .slice(0, 3)}
+            </Splide>
           </ul>
 
           <div className="mt-10">

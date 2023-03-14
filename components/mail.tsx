@@ -43,9 +43,9 @@ const Mail: NextPage = () => {
       <div id="mail" className="py-20 mb-20">
         <h2 className="font-bold text-2xl">お問い合わせ</h2>
 
-        <div className="w-9/12 m-auto bg-white border border-gray rounded-lg py-10 px-16 mt-6 flex flex-col gap-5">
-          <div className="form-group">
-            <label>お名前</label>
+        <div className="w-11/12 lg:w-9/12 m-auto bg-white border border-gray rounded-lg py-6 lg:py-10 lg:px-16 mt-6 flex flex-col gap-5">
+          <div className="form-group flex flex-col lg:flex-row w-10/12 lg:w-full m-auto">
+            <label className="text-left lg:text-center">お名前</label>
             <input
               onChange={(e) => {
                 const val = e.currentTarget.value;
@@ -57,11 +57,11 @@ const Mail: NextPage = () => {
               value={form.name}
               name="name"
               type="text"
-              className="border rounded-md ml-auto w-9/12"
+              className="border rounded-md lg:ml-auto lg:w-9/12"
             />
           </div>
-          <div className="form-group">
-            <label>メールアドレス</label>
+          <div className="form-group  flex flex-col lg:flex-row w-10/12 lg:w-full m-auto">
+            <label className="text-left lg:text-center">メールアドレス</label>
             <input
               onChange={(e) => {
                 const val = e.currentTarget.value;
@@ -72,11 +72,11 @@ const Mail: NextPage = () => {
               }}
               name="email"
               type="text"
-              className="border rounded-md  ml-auto w-9/12"
+              className="border rounded-md  lg:ml-auto lg:w-9/12"
             />
           </div>
-          <div className="form-group">
-            <label>電話番号</label>
+          <div className="form-group  flex flex-col lg:flex-row w-10/12 lg:w-full m-auto">
+            <label className="text-left lg:text-center">電話番号</label>
             <input
               onChange={(e) => {
                 const val = e.currentTarget.value;
@@ -87,11 +87,11 @@ const Mail: NextPage = () => {
               }}
               name="phoneNumber"
               type="text"
-              className="border rounded-md  ml-auto w-9/12"
+              className="border rounded-md  lg:ml-auto lg:w-9/12"
             />
           </div>
-          <div className="textarea-group">
-            <label>お問い合わせ内容</label>
+          <div className="textarea-group flex flex-col lg:flex-row w-10/12 lg:w-full m-auto">
+            <label className="text-left lg:text-center">お問い合わせ内容</label>
             <textarea
               onChange={(e) => {
                 const val = e.currentTarget.value;
@@ -101,7 +101,7 @@ const Mail: NextPage = () => {
                 }));
               }}
               name="text"
-              className="border rounded-md  ml-auto w-9/12"
+              className="border rounded-md  lg:ml-auto lg:w-9/12"
               id=""
               placeholder="お問い合わせ内容を入力してください"
               cols={30}
@@ -110,7 +110,7 @@ const Mail: NextPage = () => {
           </div>
           <div className="text-center">
             <input
-              className="border w-4/12 py-2 rounded-lg m-auto text-white bg-red-500"
+              className="border w-10/12 lg:w-4/12 py-2 rounded-lg m-auto text-white bg-red-500"
               onClick={() => setShowModal(true)}
               type="button"
               value="送信する"
