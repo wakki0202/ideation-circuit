@@ -14,7 +14,7 @@ type Props = {
 export default function Home({ news }: Props) {
   return (
     <div>
-      <header className="top-5 z-50 fixed w-full">
+      <header className="top-5 z-50 fixed w-full lg:block hidden">
         <div className="flex w-9/12 m-auto justify-between bg-white px-4 py-2 font-bold">
           <Scroll
             to="about"
@@ -82,8 +82,10 @@ export default function Home({ news }: Props) {
           </Scroll>
         </div>
       </header>
+
       <div id="mv" className="w-full">
-        <img src="/mv_bg.png" alt="" />
+        <img src="/mv_bg.png" alt="" className="hidden lg:block" />
+        <img src="/mv_bg_sp.png" alt="" className="lg:hidden" />
       </div>
 
       <div id="ロゴ"></div>
@@ -95,12 +97,12 @@ export default function Home({ news }: Props) {
       <img src="/man_6.png" alt="" width={300} className="absolute man-6" />
       <img src="/man_7.png" alt="" width={250} className="absolute man-7" />
       <img src="/man_8.png" alt="" width={300} className="absolute man-8" />
-      <div id="main" className="text-center w-10/12 m-auto mt-20">
+      <div id="main" className="text-center w-11/12 m-auto mt-10 lg:mt-20">
         <div id="about" className="pt-20">
-          <h2 className="font-bold text-2xl">
+          <h2 className="font-bold text-lg lg:text-2xl">
             アイディエーション・サーキットとは
           </h2>
-          <p className="pt-10 font-bold text-xl leading-10">
+          <p className="pt-10 font-bold text-md lg:text-xl leading-7">
             部署、世代、役割を越境して口ばかりのDiversityを終わらせ、
             <br />
             “SameよりもDifferent、NeedよりWant”を尊重し全員がお互いの背景
@@ -109,10 +111,10 @@ export default function Home({ news }: Props) {
           </p>
         </div>
 
-        <div id="three_merit" className="pt-20">
+        <div id="three_merit" className="pt-16 lg:pt-20">
           <h2 className="font-bold text-2xl">3つの学び</h2>
-          <div className="flex gap-5 w-11/12 m-auto mt-4">
-            <div className="w-4/12 m-auto">
+          <div className="flex flex-col lg:flex-row gap-5 w-11/12 m-auto mt-4">
+            <div className="w-11/12 lg:w-4/12 m-auto">
               <img
                 src="/merit_ideation.png"
                 alt=""
@@ -120,11 +122,11 @@ export default function Home({ news }: Props) {
                 className="m-auto"
               />
               <p className="font-bold text-xl mt-5">アイディエーション</p>
-              <p className="mt-2">
+              <p className="mt-2 text-left lg:text-center">
                 正解のない問いに対して様々な視点からアプローチし、具体化と抽象化を繰り返してアイデア発想の体質を実装します。
               </p>
             </div>
-            <div className="w-4/12 m-auto">
+            <div className="w-11/12 lg:w-4/12 m-auto">
               <img
                 src="/merit_teambuild.png"
                 alt=""
@@ -132,11 +134,11 @@ export default function Home({ news }: Props) {
                 className="m-auto mt-7"
               />
               <p className="font-bold text-xl mt-5">チームビルド</p>
-              <p className="mt-2">
+              <p className="mt-2  text-left lg:text-center">
                 世代、部署を超えたチームと個人の目的のために協創する中で互いの立場や背景を考えます。
               </p>
             </div>
-            <div className="w-4/12 m-auto">
+            <div className="w-11/12 lg:w-4/12 m-auto">
               <img
                 src="/merit_businessliteracy.png"
                 alt=""
@@ -144,7 +146,7 @@ export default function Home({ news }: Props) {
                 className="m-auto mt-12"
               />
               <p className="font-bold text-xl mt-5">ビジネスリテラシー</p>
-              <p className="mt-2">
+              <p className="mt-2  text-left lg:text-center">
                 人・モノ・カネ、そして時間を何に割き、今何をすべきかを考える。要素が複雑に絡む中で出てくる問題を解決しながら進むことでビジネスの地盤を固めます。
               </p>
             </div>
@@ -153,8 +155,15 @@ export default function Home({ news }: Props) {
 
         <div id="about_game" className="pt-20 text-left w-9/12 m-auto relative">
           <h2 className="font-bold text-2xl text-center">ゲームの概要</h2>
-
-          <div className="absolute z-10">
+          <div className="lg:absolute lg:top-70 lg:right-10">
+            <img
+              src="/theme_card.png"
+              alt=""
+              width={400}
+              className="m-auto mt-4"
+            />
+          </div>
+          <div className="lg:absolute z-10">
             <div className="font-bold text-xl pt-10">
               <p className="about_game_main_phrase p-1">
                 世の中を変えるためのアイデアを
@@ -169,30 +178,19 @@ export default function Home({ news }: Props) {
               勝敗の決定：①保有コインの総額（チーム戦） ②人事評価（個人戦）
             </p>
           </div>
-
-          <div className="absolute top-70 right-10">
-            <img
-              src="/theme_card.png"
-              alt=""
-              width={400}
-              className="m-auto mt-4"
-            />
-          </div>
         </div>
 
-        <div id="movie" className="pt-20 mt-96">
+        <div id="movie" className="pt-20 mt-18 lg:mt-96">
           <h2 className="font-bold text-2xl">
             動画でわかるアイディエーション・サーキット研修
           </h2>
 
           <iframe
-            width="700"
-            height="400"
             src="/trial.mp4"
             title="YouTube video player"
             allow="accelerometer;  clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
-            className="mt-10 m-auto"
+            className="movie mt-10 m-auto"
           ></iframe>
         </div>
 
@@ -203,7 +201,7 @@ export default function Home({ news }: Props) {
             className="border-4 border-black rounded-sm w-10/12 m-auto py-10 mt-14"
           >
             <div className="w-11/12 m-auto text-left">
-              <p className="flex items-center font-bold text-xl gap-2">
+              <p className="flex flex-col lg:flex-row items-center font-bold text-xl gap-2">
                 <img src="/step_1.png" alt="" width={50} />
                 <span className="text-5xl">01</span>オーダー受注
               </p>
@@ -220,7 +218,7 @@ export default function Home({ news }: Props) {
                   クライアントからテーマとターゲットのオーダーを受けアイデアブレストに入ります。
                 </span>
               </p>
-              <div className="flex mt-10 font-bold">
+              <div className="flex flex-col lg:flex-row mt-10 font-bold">
                 <div className="w-3/6 m-auto">
                   <p className="font-bold text-2xl text-center">テーマカード</p>
 
@@ -258,7 +256,7 @@ export default function Home({ news }: Props) {
               <p className="text-xl font-bold mt-20 text-center">
                 【その他カード】
               </p>
-              <div className="flex mt-7 font-bold">
+              <div className="flex flex-col lg:flex-row mt-7 font-bold">
                 <div className="w-3/6 m-auto">
                   <p className="font-bold text-2xl text-center">
                     ユニークカード
@@ -295,7 +293,7 @@ export default function Home({ news }: Props) {
 
           <div
             id="role_decision"
-            className="mt-14 border-4 border-black rounded-sm w-10/12 m-auto py-10"
+            className="mt-14 border-4 border-black rounded-sm w-11/12 lg:w-10/12 m-auto py-10"
           >
             <div className="w-11/12 m-auto text-left">
               <p className="flex items-center font-bold text-xl gap-2">
@@ -323,6 +321,58 @@ export default function Home({ news }: Props) {
                     perMove: 1,
                     type: "loop",
                   }}
+                  className="hidden lg:block"
+                >
+                  <SplideSlide>
+                    <img
+                      src="/boss.png"
+                      alt=""
+                      width={350}
+                      className="m-auto"
+                    />
+                  </SplideSlide>
+                  <SplideSlide>
+                    <img
+                      src="/manager.png"
+                      alt=""
+                      width={350}
+                      className="m-auto"
+                    />
+                  </SplideSlide>
+                  <SplideSlide>
+                    <img
+                      src="/creator.png"
+                      alt=""
+                      width={350}
+                      className="m-auto"
+                    />
+                  </SplideSlide>
+                  <SplideSlide>
+                    <img
+                      src="/producer.png"
+                      alt=""
+                      width={350}
+                      className="m-auto"
+                    />
+                  </SplideSlide>
+                  <SplideSlide>
+                    <img
+                      src="/marketer.png"
+                      alt=""
+                      width={350}
+                      className="m-auto"
+                    />
+                  </SplideSlide>
+                </Splide>
+                <Splide
+                  aria-label=""
+                  options={{
+                    rewind: true,
+                    perPage: 1,
+                    perMove: 1,
+                    type: "loop",
+                  }}
+                  className="lg:hidden"
                 >
                   <SplideSlide>
                     <img
@@ -388,15 +438,20 @@ export default function Home({ news }: Props) {
                 </span>
               </p>
 
-              <div id="カード3枚" className="flex gap-6 mt-10">
-                <div className="border-4 border-black rounded-lg p-5 w-4/12 font-bold">
+              <div
+                id="カード3枚"
+                className="flex flex-col lg:flex-row gap-6 mt-10"
+              >
+                <div className="border-4 border-black rounded-lg p-5  w-11/12  lg:w-4/12 font-bold relative">
+                  <img src="/badge1.png" alt="" width={40} className="badge" />
                   <p className="text-2xl text-center">アイデアブレスト</p>
                   <p className="py-3">
                     スキルやコインを使わずにテーマに沿ったアイデアを出してみましょう
                   </p>
                   <p>例）テーマ 未来の交通手段</p>
                 </div>
-                <div className="border-4 border-black rounded-lg p-5 w-4/12 font-bold">
+                <div className="border-4 border-black rounded-lg p-5 w-11/12 m-auto lg:w-4/12 font-bold  relative">
+                  <img src="/badge2.png" alt="" width={40} className="badge" />
                   <p className="text-2xl  text-center">抽象化コンセプト</p>
                   <p className="text-left py-3">
                     1で出たアイデアを抽象化してみましょう。
@@ -404,7 +459,8 @@ export default function Home({ news }: Props) {
                   <p>アイデア：1人用電車</p>
                   <p>抽象化：個別化/インフラ/ソロ</p>
                 </div>
-                <div className="border-4 border-black rounded-lg p-5 w-4/12 font-bold">
+                <div className="border-4 border-black rounded-lg p-5  w-11/12 m-auto lg:w-4/12 font-bold  relative">
+                  <img src="/badge3.png" alt="" width={40} className="badge" />
                   <p className="text-2xl text-center leading-4">
                     アイディエーション
                     <br />
@@ -421,7 +477,8 @@ export default function Home({ news }: Props) {
                 <p className="text-center font-bold text-3xl">↓</p>
               </div>
 
-              <div className="flex border-4 border-black rounded-lg p-5">
+              <div className="flex border-4 border-black rounded-lg p-5 relative">
+                <img src="/badge4.png" alt="" width={350} className="badge" />
                 <div className="border-r-4 border-black border-dashed w-4/12 font-bold text-center p-3 text-xl">
                   <p className="text-center">スキルの使用 20コイン</p>
                   <p className="text-sm">ボスマネージャーは必要なし。</p>
