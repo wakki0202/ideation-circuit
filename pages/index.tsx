@@ -13,7 +13,7 @@ type Props = {
 
 export default function Home({ news }: Props) {
   return (
-    <div>
+    <div className="w-full overflow-x-hidden">
       <header className="top-5 z-50 fixed w-full lg:block hidden">
         <div className="flex w-9/12 m-auto justify-between bg-white px-4 py-2 font-bold">
           <Scroll
@@ -517,7 +517,7 @@ export default function Home({ news }: Props) {
 
               <div className="flex flex-col lg:flex-row border-4 border-black rounded-lg p-5 relative mt-10 lg:mt-0">
                 <img src="/badge4.png" alt="" width={350} className="badge" />
-                <div className="border-b-4 lg:border-r-4 border-black border-dashed w-11/12 lg:w-4/12 font-bold text-center p-3 text-xl">
+                <div className="border-b-4 lg:border-b-0 lg:border-r-4 border-black border-dashed w-11/12 lg:w-4/12 font-bold text-center p-3 text-xl">
                   <p className="text-center">スキルの使用 20コイン</p>
                   <p className="text-sm">ボスマネージャーは必要なし。</p>
                 </div>
@@ -613,49 +613,52 @@ export default function Home({ news }: Props) {
         <div id="news" className="pt-20">
           <h2 className="font-bold text-2xl">ideation NEWS</h2>
 
-          <ul className="w-11/12 m-auto flex gap-10 hidden lg:block">
-            {news
-              .map((news) => (
-                <li key={news.id} className="my-5 w-9/12 m-auto">
-                  <Link
-                    href={`/news/${news.id}`}
-                    className="font-bold text-left"
-                  >
-                    <img
-                      className="rounded-t-lg"
-                      src={news.eyeCatch.url}
-                      alt="Sunset in the mountains"
-                    />
-                    <p className="text-left border-b border-x px-3 pt-2 pb-6 border-black rounded-b-lg bg-gray-700 text-white">
-                      {news.title}
-                    </p>
-                  </Link>
-                </li>
-              ))
-              .slice(0, 3)}
-          </ul>
-
-          <ul className="w-11/12 m-auto flex gap-10 lg:hidden">
-            {news
-              .map((news) => (
-                <li key={news.id} className="my-5 w-9/12 m-auto">
-                  <Link
-                    href={`/news/${news.id}`}
-                    className="font-bold text-left"
-                  >
-                    <img
-                      className="rounded-t-lg"
-                      src={news.eyeCatch.url}
-                      alt="Sunset in the mountains"
-                    />
-                    <p className="text-left border-b border-x px-3 pt-2 pb-6 border-black rounded-b-lg bg-gray-700 text-white">
-                      {news.title}
-                    </p>
-                  </Link>
-                </li>
-              ))
-              .slice(0, 1)}
-          </ul>
+          <div className="hidden lg:block">
+            <ul className="w-11/12 m-auto flex gap-10">
+              {news
+                .map((news) => (
+                  <li key={news.id} className="my-5 w-9/12 m-auto">
+                    <Link
+                      href={`/news/${news.id}`}
+                      className="font-bold text-left"
+                    >
+                      <img
+                        className="rounded-t-lg"
+                        src={news.eyeCatch.url}
+                        alt="Sunset in the mountains"
+                      />
+                      <p className="text-left border-b border-x px-3 pt-2 pb-6 border-black rounded-b-lg bg-gray-700 text-white">
+                        {news.title}
+                      </p>
+                    </Link>
+                  </li>
+                ))
+                .slice(0, 3)}
+            </ul>
+          </div>
+          <div className="lg:hidden">
+            <ul className="w-11/12 m-auto flex gap-10">
+              {news
+                .map((news) => (
+                  <li key={news.id} className="my-5 w-9/12 m-auto">
+                    <Link
+                      href={`/news/${news.id}`}
+                      className="font-bold text-left"
+                    >
+                      <img
+                        className="rounded-t-lg"
+                        src={news.eyeCatch.url}
+                        alt="Sunset in the mountains"
+                      />
+                      <p className="text-left border-b border-x px-3 pt-2 pb-6 border-black rounded-b-lg bg-gray-700 text-white">
+                        {news.title}
+                      </p>
+                    </Link>
+                  </li>
+                ))
+                .slice(0, 1)}
+            </ul>
+          </div>
 
           <div className="mt-10">
             <Link

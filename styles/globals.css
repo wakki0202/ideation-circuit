@@ -180,10 +180,9 @@ h2 {
   .man-6,
   .man-7,
   .man-8 {
-    position: absolute;
-    width: 100px;
+    display: none;
   }
-
+  /* 
   .man-1 {
     top: 650px;
     left: -30px;
@@ -217,7 +216,7 @@ h2 {
   .man-8 {
     top: 12300px;
     right: -30px;
-  }
+  } */
 
   .splide .splide__arrow {
     background-color: transparent;
